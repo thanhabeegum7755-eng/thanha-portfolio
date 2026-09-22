@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thanha Beegum | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080810;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 8, 16, 0.95);
+            border-bottom: 1px solid #252535;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            padding: 0 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #b875ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #b875ff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: auto;
+            padding: 130px 30px 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .small-title {
+            color: #b875ff;
+            letter-spacing: 4px;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #b875ff;
+        }
+
+        .hero h2 {
+            color: #ddd;
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #999;
+            font-size: 16px;
+            max-width: 550px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 30px;
+            background: #b875ff;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            padding: 13px 25px;
+            border: 1px solid #555;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            border-color: #b875ff;
+            color: #b875ff;
+        }
+
+        /* PROFILE */
+        .profile-box {
+            width: 330px;
+            height: 400px;
+            border-radius: 170px 170px 25px 25px;
+            background: linear-gradient(135deg, #b875ff, #635bff);
+            padding: 8px;
+            flex-shrink: 0;
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            border-radius: 165px 165px 18px 18px;
+            background: #171722;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 90px;
+            font-weight: bold;
+            color: #b875ff;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 30px;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .dark {
+            background: #101019;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title small {
+            color: #b875ff;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+            margin-top: 5px;
+        }
+
+        .section-title h2 span {
+            color: #b875ff;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: #15151f;
+            border: 1px solid #292936;
+            border-radius: 20px;
+            padding: 35px;
+        }
+
+        .card h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #292936;
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .info strong {
+            color: #b875ff;
+        }
+
+        .info span {
+            color: #aaa;
+        }
+
+        /* EDUCATION */
+        .timeline {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .education-card {
+            margin-bottom: 25px;
+            padding: 25px;
+            border-left: 4px solid #b875ff;
+            background: #15151f;
+            border-radius: 10px;
+        }
+
+        .education-card .year {
+            color: #b875ff;
+            font-weight: bold;
+        }
+
+        .education-card h3 {
+            margin: 5px 0;
+        }
+
+        .education-card p {
+            color: #999;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            padding: 30px;
+            background: #15151f;
+            border: 1px solid #292936;
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #b875ff;
+        }
+
+        .skill-number {
+            color: #b875ff;
+            font-size: 13px;
+        }
+
+        .skill h3 {
+            margin: 15px 0 10px;
+        }
+
+        .skill p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: #15151f;
+            border: 1px solid #292936;
+            border-radius: 18px;
+            padding: 30px;
+            min-height: 250px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: #b875ff;
+        }
+
+        .project-number {
+            color: #b875ff;
+        }
+
+        .project h3 {
+            margin: 30px 0 12px;
+        }
+
+        .project p {
+            color: #999;
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info p {
+            color: #999;
+            margin: 15px 0 30px;
+        }
+
+        .contact-detail {
+            margin: 18px 0;
+        }
+
+        .contact-detail strong {
+            display: block;
+            color: #b875ff;
+        }
+
+        .contact-detail span {
+            color: #aaa;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            padding: 15px;
+            background: #15151f;
+            border: 1px solid #292936;
+            border-radius: 10px;
+            color: white;
+            outline: none;
+            font-family: Arial, sans-serif;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #b875ff;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #b875ff;
+            color: #111;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            border-top: 1px solid #292936;
+            background: #080810;
+        }
+
+        footer .footer-logo {
+            color: #b875ff;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        footer p {
+            color: #777;
+            margin-top: 8px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 120px;
+            }
+
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .profile-box {
+                width: 250px;
+                height: 310px;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">TB.</div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- HOME -->
+    <section id="home">
+        <div class="hero">
+
+            <div class="hero-text">
+
+                <div class="small-title">HELLO, I'M</div>
+
+                <h1>Thanha <span>Beegum</span></h1>
+
+                <h2>Web Designing Student & Creative Learner</h2>
+
+                <p>
+                    A passionate learner interested in web designing,
+                    journalism, writing and creative digital work.
+                </p>
+
+                <div class="buttons">
+                    <a href="#about" class="btn">Explore My Portfolio</a>
+                    <a href="#contact" class="btn-outline">Contact Me</a>
+                </div>
+
+            </div>
+
+            <div class="profile-box">
+                <div class="profile">TB</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="dark">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <small>GET TO KNOW ME</small>
+                <h2>About <span>Me</span></h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="card">
+                    <h3>Who I Am</h3>
+
+                    <p>
+                        I am Thanha Beegum, a creative and enthusiastic
+                        learner interested in web designing, journalism
+                        and digital creativity.
+                    </p>
+
+                    <p>
+                        I enjoy learning new technologies and developing
+                        my skills through practical projects and creative ideas.
+                    </p>
+                </div>
+
+                <div class="card">
+
+                    <div class="info">
+                        <strong>Name</strong>
+                        <span>Thanha Beegum</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>Location</strong>
+                        <span>Irikkur,Kannur, Kerala</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>Education</strong>
+                        <span>Higher Secondary - Journalism</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>Field</strong>
+                        <span>Web Designing & Creative Media</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <small>MY ACADEMIC JOURNEY</small>
+                <h2>Education</h2>
+            </div>
+
+            <div class="timeline">
+
+                <div class="education-card">
+                    <div class="year">Currently Learning</div>
+                    <h3>Web Designing</h3>
+                    <p>HTML, CSS and JavaScript</p>
+                </div>
+
+                <div class="education-card">
+                    <div class="year">2026</div>
+                    <h3>Higher Secondary Education</h3>
+                    <p>Journalism Stream - Completed</p>
+                </div>
+
+                <div class="education-card">
+                    <div class="year">2024</div>
+                    <h3>SSLC</h3>
+                    <p>Secondary School Education</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="dark">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <small>WHAT I CAN DO</small>
+                <h2>My <span>Skills</span></h2>
+            </div>
+
+            <div class="skills">
+
+                <div class="skill">
+                    <div class="skill-number">01</div>
+                    <h3>Web Designing</h3>
+                    <p>Creating websites using HTML, CSS and JavaScript.</p>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-number">02</div>
+                    <h3>Journalism</h3>
+                    <p>Interest in journalism, media and communication.</p>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-number">03</div>
+                    <h3>Writing</h3>
+                    <p>Creative writing and digital content creation.</p>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-number">04</div>
+                    <h3>Typing</h3>
+                    <p>Basic typing and computer skills.</p>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-number">05</div>
+                    <h3>Basic Computer</h3>
+                    <p>Basic computer and digital knowledge.</p>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-number">06</div>
+                    <h3>Creative Thinking</h3>
+                    <p>Creative ideas for digital and design projects.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <small>MY WORK</small>
+                <h2>Featured <span>Projects</span></h2>
+            </div>
+
+            <div class="projects">
+
+                <div class="project">
+                    <div class="project-number">PROJECT 01</div>
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        A responsive personal portfolio website
+                        created using HTML and CSS.
+                    </p>
+                    <a  href="file:///C:/Users/ACER/Downloads/pearl_ivory_website/pearl_ivory_website/index.html#contact">click to see</a>
+                </div>
+
+                <div class="project">
+                    <div class="project-number">PROJECT 02</div>
+                    <h3>Creative Web Design</h3>
+                    <p>
+                        A modern webpage concept with a clean
+                        and user-friendly design.
+                    </p>
+                </div>
+
+                <div class="project">
+                    <div class="project-number">PROJECT 03</div>
+                    <h3>Creative Content</h3>
+                    <p>
+                        Creative writing and digital content ideas
+                        based on journalism and media.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="dark">
+
+        <div class="section-inner">
+
+            <div class="section-title">
+                <small>LET'S CONNECT</small>
+                <h2>Contact <span>Me</span></h2>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info">
+
+                    <h2>Let's work together.</h2>
+
+                    <p>
+                        Feel free to contact me for projects,
+                        opportunities or creative work.
+                    </p>
+
+                    <div class="contact-detail">
+                        <strong>Location</strong>
+                        <span>Irikkur,Kannur, Kerala, India</span>
+                    </div>
+
+                    <div class="contact-detail">
+                        <strong>Email</strong>
+                        <span>thanhabeegum7755@gmail.com</span>
+                    </div>
+
+                    <div class="contact-detail">
+                        <strong>Phone</strong>
+                        <span>+91 92078 12447</span>
+                    </div>
+
+                </div>
+
+
+                <form id="contactForm">
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="Subject"
+                    >
+
+                    <textarea
+                        rows="6"
+                        placeholder="Your Message"
+                    ></textarea>
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">TB.</div>
+
+        <p>
+            © 2026 Thanha Beegum. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        document
+            .getElementById("contactForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                alert("Thank you! Your message has been received.");
+
+                this.reset();
+
+            });
+
+    </script>
+
+</body>
+</html>
